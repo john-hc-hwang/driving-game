@@ -25,18 +25,25 @@ var left = 0;
 // var top = 0;
 // var bottom = 0;
 
+var spaceIndex = 0;
+
 function go() {
   left += 16;
-  var leftPx = left + "px";
+  var leftPx = left + 'px';
   $f1.style.left = leftPx;
 }
 
+var intervalId = setInterval(go, 16); // make intervalId global scope
+clearInterval(intervalId); // clearInterval asap to prevent it from moving when page is refreshed
+
 window.addEventListener('keydown', function (event) {
-  if (event.key === " ") {
-    var intervalId = setInterval(go, 16);
+  if (event.key === ' ') {
+    spaceIndex++;
+    if (spaceIndex % 2 === 1) intervalId = setInterval(go, 16);
+    if (spaceIndex % 2 === 0) clearInterval(intervalId);
   }
 
-  if (event.key === "ArrowLeft" || event.key === "ArrowRight" || event.key === "ArrowDown" || event.key === "ArrowUp") {
+  if (event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'ArrowDown' || event.key === 'ArrowUp') {
     $f1.className = 'f1';
     for (var dirs of direction) {
       if (dirs.key === event.key) $f1.classList.add(dirs.dir);

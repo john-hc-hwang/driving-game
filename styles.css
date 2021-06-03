@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-image: url("https://static.vecteezy.com/system/resources/previews/001/209/683/non_2x/flag-racing-png.png");
+  background-size: cover;
+}
+
+.f1 {
+  width: 10%;
+}
+
+/* .west {
+  transform: rotate(180deg);
+}
+
+.east {
+  transform: rotate(360deg);
+}
+
+.south {
+  transform: rotate(90deg);
+}
+
+.north {
+  transform: rotate(270deg);
+} */
